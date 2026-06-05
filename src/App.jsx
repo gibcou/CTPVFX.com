@@ -362,41 +362,7 @@ function App() {
       </section>
 
 
-      {/* TESTIMONIALS */}
-      <section className="testimonials">
-        <div className="testimonials-inner">
-          <div className="reveal">
-            <div className="section-tag">Client results</div>
-            <h2 className="section-title">What studios say<em>after launch.</em></h2>
-          </div>
-          <div className="testimonials-grid stagger">
-            <div className="testimonial-card">
-              <div className="testimonial-quote">"We were embarrassed to send clients to our old site. Now we lead with it in pitches. Three new clients cited the site in their very first email to us."</div>
-              <div className="testimonial-author">
-                <div className="testimonial-name">Kofi Asante</div>
-                <div className="testimonial-role">VFX Supervisor — Dark Matter FX</div>
-              </div>
-              <div className="testimonial-result">+3 inbound clients in 60 days</div>
-            </div>
-            <div className="testimonial-card">
-              <div className="testimonial-quote">"14 days sounds like marketing copy. We launched on day 13. The retainer keeps everything current without me having to think about it at all."</div>
-              <div className="testimonial-author">
-                <div className="testimonial-name">Priya Nair</div>
-                <div className="testimonial-role">Executive Producer — Nair Motion Works</div>
-              </div>
-              <div className="testimonial-result">Launched in 13 days</div>
-            </div>
-            <div className="testimonial-card">
-              <div className="testimonial-quote">"First web team that didn't need a glossary. They knew what a comp was, set up before/after breakdowns correctly, and integrated our Vimeo reel on day one."</div>
-              <div className="testimonial-author">
-                <div className="testimonial-name">Marcus Webb</div>
-                <div className="testimonial-role">Creative Director — Webb & Frame</div>
-              </div>
-              <div className="testimonial-result">Zero back-and-forth on VFX terms</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* PROCESS */}
       <section className="process section-burn" id="process">
