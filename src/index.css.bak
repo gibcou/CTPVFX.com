@@ -131,7 +131,7 @@ h2.section-title em{font-style:normal;color:var(--orange)}
 .why-card:last-child{border-right:none}
 .why-card:hover{background:rgba(0,212,255,0.04)}
 .why-num{font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.15em;color:var(--orange);margin-bottom:1.5rem}
-.why-icon{display:block;margin-bottom:1.25rem;color:var(--orange);width:26px;height:26px}
+.why-icon{font-size:1.75rem;margin-bottom:1.25rem;display:block}
 .why-card h3{font-family:var(--font-display);font-size:1.6rem;letter-spacing:0.04em;color:var(--white);margin-bottom:0.75rem}
 .why-card p{font-size:0.88rem;color:rgba(180,220,255,0.55);line-height:1.7}
 
@@ -230,20 +230,10 @@ footer{background:#060d18;padding:2.5rem 3rem;display:flex;align-items:center;ju
 .tooltip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:rgba(8,8,8,0.95);border:1px solid rgba(232,77,28,0.3);color:var(--white);font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.08em;padding:0.5rem 0.75rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s;z-index:50}
 .tooltip-wrap:hover .tooltip{opacity:1}
 
-
-/* HAMBURGER */
-.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:110;width:36px;height:36px;flex-shrink:0}
-.hamburger span{display:block;width:22px;height:1.5px;background:var(--white);transition:transform 0.25s,opacity 0.2s,background 0.2s;transform-origin:center}
-.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
-.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-
 /* MOBILE */
 @media(max-width:900px){
   nav{padding:1rem 1.5rem}
-  .hamburger{display:flex}
-  .nav-links{display:none!important;position:fixed;top:60px;left:0;right:0;background:rgba(2,4,8,0.97);border-bottom:1px solid rgba(0,212,255,0.2);padding:2rem 1.5rem;flex-direction:column;gap:1.5rem;z-index:99;backdrop-filter:blur(16px)}
-  .nav-links.open{display:flex!important}
+  .nav-links{display:none}
   .hero{grid-template-columns:1fr;padding:6rem 1.5rem 3rem}
   .hero-right{border-left:none;border-top:1px solid rgba(244,240,232,0.06);padding:3rem 0 0;align-items:flex-start}
   .problem-inner,.contact-inner{grid-template-columns:1fr;gap:3rem}
@@ -398,18 +388,3 @@ nav.scrolled{animation:none}
 
 /* Contact section data stream */
 .contact-section{position:relative;overflow:hidden}
-
-/* TESTIMONIALS */
-.testimonials{background:#060d18}
-.testimonials-inner{max-width:1200px;margin:0 auto}
-.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,212,255,0.08);margin-top:4rem}
-.testimonial-card{background:#060d18;padding:2.5rem;position:relative;overflow:hidden;transition:background 0.3s;display:flex;flex-direction:column}
-.testimonial-card:hover{background:rgba(0,212,255,0.03)}
-.testimonial-card::before{content:'"';position:absolute;top:-1.5rem;left:1.5rem;font-family:var(--font-display);font-size:9rem;color:rgba(0,212,255,0.05);line-height:1;pointer-events:none;z-index:0}
-.testimonial-quote{font-size:0.95rem;color:rgba(180,220,255,0.75);line-height:1.85;margin-bottom:2rem;position:relative;z-index:1;flex:1}
-.testimonial-author{margin-bottom:0.85rem;position:relative;z-index:1}
-.testimonial-name{font-family:var(--font-display);font-size:1.25rem;letter-spacing:0.04em;color:var(--white)}
-.testimonial-role{font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.12em;color:var(--gray-light);text-transform:uppercase;margin-top:0.25rem}
-.testimonial-result{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.1em;color:var(--orange);text-transform:uppercase;border:1px solid rgba(0,212,255,0.2);padding:0.3rem 0.75rem;position:relative;z-index:1;background:rgba(0,212,255,0.04)}
-.testimonial-result::before{content:'';width:5px;height:5px;background:var(--orange);border-radius:50%;flex-shrink:0;box-shadow:0 0 6px rgba(0,212,255,0.8)}
-@media(max-width:900px){.testimonials-grid{grid-template-columns:1fr}}

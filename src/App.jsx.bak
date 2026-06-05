@@ -1,8 +1,7 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 function App() {
-  const [navOpen, setNavOpen] = useState(false);
   useEffect(() => {
     /* CURSOR */
     const cur = document.getElementById('cursor');
@@ -238,15 +237,12 @@ function App() {
 
       <nav id="main-nav">
         <a href="#" className="nav-logo">CUT<span>.</span>POINT</a>
-        <ul className={`nav-links${navOpen ? ' open' : ''}`}>
-          <li><a href="#why" onClick={() => setNavOpen(false)}>Approach</a></li>
-          <li><a href="#services" onClick={() => setNavOpen(false)}>Services</a></li>
-          <li><a href="#projects" onClick={() => setNavOpen(false)}>Projects</a></li>
-          <li><a href="#contact" className="nav-cta" onClick={() => setNavOpen(false)}>Get a quote</a></li>
+        <ul className="nav-links">
+          <li><a href="#why">Approach</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact" className="nav-cta">Get a quote</a></li>
         </ul>
-        <button className={`hamburger${navOpen ? ' open' : ''}`} onClick={() => setNavOpen(v => !v)} aria-label="Toggle navigation">
-          <span></span><span></span><span></span>
-        </button>
       </nav>
 
       <div className="scarcity">
@@ -311,10 +307,10 @@ function App() {
             <h2 className="section-title">Built different.<em>By design.</em></h2>
           </div>
           <div className="why-grid stagger">
-            <div className="why-card"><div className="why-num">01</div><span className="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="17" y1="7" x2="22" y2="7"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="2" y1="17" x2="7" y2="17"/></svg></span><h3>We speak VFX</h3><p>Showreels, shot breakdowns, credit pages, Vimeo embeds — we know the vocabulary and the craft.</p></div>
-            <div className="why-card"><div className="why-num">02</div><span className="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><h3>We move fast</h3><p>14 days from kickoff to a live, polished MVP. VFX runs on tight deadlines. Your website build should too.</p></div>
-            <div className="why-card"><div className="why-num">03</div><span className="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span><h3>We stay on</h3><p>Our retainer keeps your site alive. New reel? New credit? We handle it. You focus on production.</p></div>
-            <div className="why-card"><div className="why-num">04</div><span className="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><h3>Flat pricing</h3><p>$10k build. $5k/mo retainer. You know the full cost before we start. No surprise invoices.</p></div>
+            <div className="why-card"><div className="why-num">01</div><span className="why-icon">🎬</span><h3>We speak VFX</h3><p>Showreels, shot breakdowns, credit pages, Vimeo embeds — we know the vocabulary and the craft.</p></div>
+            <div className="why-card"><div className="why-num">02</div><span className="why-icon">⚡</span><h3>We move fast</h3><p>14 days from kickoff to a live, polished MVP. VFX runs on tight deadlines. Your website build should too.</p></div>
+            <div className="why-card"><div className="why-num">03</div><span className="why-icon">🔁</span><h3>We stay on</h3><p>Our retainer keeps your site alive. New reel? New credit? We handle it. You focus on production.</p></div>
+            <div className="why-card"><div className="why-num">04</div><span className="why-icon">📐</span><h3>Flat pricing</h3><p>$10k build. $5k/mo retainer. You know the full cost before we start. No surprise invoices.</p></div>
           </div>
         </div>
       </section>
@@ -356,43 +352,6 @@ function App() {
               <div>
                 <video src="first-vfx-project.mp4" autoPlay muted loop style={{ width: '100%', height: 'auto', borderRadius: '4px' }}></video>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* TESTIMONIALS */}
-      <section className="testimonials">
-        <div className="testimonials-inner">
-          <div className="reveal">
-            <div className="section-tag">Client results</div>
-            <h2 className="section-title">What studios say<em>after launch.</em></h2>
-          </div>
-          <div className="testimonials-grid stagger">
-            <div className="testimonial-card">
-              <div className="testimonial-quote">"We were embarrassed to send clients to our old site. Now we lead with it in pitches. Three new clients cited the site in their very first email to us."</div>
-              <div className="testimonial-author">
-                <div className="testimonial-name">Kofi Asante</div>
-                <div className="testimonial-role">VFX Supervisor — Dark Matter FX</div>
-              </div>
-              <div className="testimonial-result">+3 inbound clients in 60 days</div>
-            </div>
-            <div className="testimonial-card">
-              <div className="testimonial-quote">"14 days sounds like marketing copy. We launched on day 13. The retainer keeps everything current without me having to think about it at all."</div>
-              <div className="testimonial-author">
-                <div className="testimonial-name">Priya Nair</div>
-                <div className="testimonial-role">Executive Producer — Nair Motion Works</div>
-              </div>
-              <div className="testimonial-result">Launched in 13 days</div>
-            </div>
-            <div className="testimonial-card">
-              <div className="testimonial-quote">"First web team that didn't need a glossary. They knew what a comp was, set up before/after breakdowns correctly, and integrated our Vimeo reel on day one."</div>
-              <div className="testimonial-author">
-                <div className="testimonial-name">Marcus Webb</div>
-                <div className="testimonial-role">Creative Director — Webb & Frame</div>
-              </div>
-              <div className="testimonial-result">Zero back-and-forth on VFX terms</div>
             </div>
           </div>
         </div>
