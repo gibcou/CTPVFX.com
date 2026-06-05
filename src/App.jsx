@@ -1,5 +1,6 @@
 
 import { useEffect } from 'react';
+import Scene from './Scene';
 
 function App() {
   useEffect(() => {
@@ -71,37 +72,7 @@ function App() {
     }, { threshold: 0.5 });
     document.querySelectorAll('.count-up').forEach(el => cobs.observe(el));
 
-    /* PARTICLES */
-    const canvas = document.getElementById('particles-canvas');
-    if (canvas) {
-      const ctx = canvas.getContext('2d');
-      let W, H, pts = [];
-      function resize() { W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
-      resize();
-      window.addEventListener('resize', resize);
-      for (let i = 0; i < 38; i++) {
-        pts.push({ x: Math.random() * 1600, y: Math.random() * 900, vx: (Math.random() - .5) * 0.3, vy: (Math.random() - .5) * 0.3, r: Math.random() * 1.5 + 0.5, o: Math.random() * 0.4 + 0.1 });
-      }
-      function drawPts() {
-        if (!ctx) return;
-        ctx.clearRect(0, 0, W, H);
-        pts.forEach(p => {
-          p.x += p.vx; p.y += p.vy;
-          if (p.x < 0 || p.x > W) p.vx *= -1;
-          if (p.y < 0 || p.y > H) p.vy *= -1;
-          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(0,212,255,' + p.o + ')'; ctx.fill();
-        });
-        for (let i = 0; i < pts.length; i++) {
-          for (let j = i + 1; j < pts.length; j++) {
-            const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y, d = Math.sqrt(dx * dx + dy * dy);
-            if (d < 130) { ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.strokeStyle = 'rgba(0,212,255,' + (0.06 * (1 - d / 130)) + ')'; ctx.lineWidth = 0.5; ctx.stroke(); }
-          }
-        }
-        requestAnimationFrame(drawPts);
-      }
-      drawPts();
-    }
+
 
     /* FORM */
     const form = document.getElementById('contact-form');
@@ -252,7 +223,7 @@ function App() {
       {/* HERO */}
       <section className="hero" style={{ paddingTop: '120px' }}>
         <div className="hero-bg-grid"></div>
-        <div className="hero-bg-chromatic"></div><div className="scanline"></div><canvas className="hero-particles" id="particles-canvas"></canvas><div className="lens-flare"></div><div className="lens-flare-2"></div><div className="timecode">01:<span className="tc-colon">:</span>12:08<span className="tc-colon">:</span>14</div><div className="vu-meter"><div className="vu-bar"></div><div className="vu-bar"></div><div className="vu-bar"></div><div className="vu-bar"></div><div className="vu-bar"></div><div className="vu-bar"></div><div className="vu-bar"></div><div className="vu-bar"></div></div>
+        <div className="hero-bg-chromatic"></div><div className="scanline"></div><div className="lens-flare"></div><div className="lens-flare-2"></div><div className="timecode">01:<span className="tc-colon">:</span>12:08<span className="tc-colon">:</span>14</div><div className="vu-meter"><div className="vu-bar"></div><div className="vu-bar"></div><div className="vu-bar"></div><div className="vu-bar"></div><div className="vu-bar"></div><div className="vu-bar"></div><div className="vu-bar"></div><div className="vu-bar"></div></div>
         <div className="hero-left">
           <div className="hero-tag">Web design for VFX studios</div>
           <h1 className="display">Your VFX work<em><span className="glitch-wrap" data-text="deserves a site">deserves a site</span></em>that closes.</h1>
@@ -262,20 +233,7 @@ function App() {
           </div>
         </div>
         <div className="hero-right">
-          <div className="hero-stats">
-            <div className="stat-item">
-              <div className="stat-num"><span className="count-up" data-target="14">0</span><span style={{ color: '#00d4ff', textShadow: '0 0 12px rgba(0,212,255,0.8)' }}>days</span></div>
-              <div className="stat-label">From kickoff to live MVP</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-num">$<span className="count-up" data-target="10">0</span><span style={{ color: '#7b2fff', textShadow: '0 0 12px rgba(123,47,255,0.8)' }}>k</span></div>
-              <div className="stat-label">Flat build fee, no surprises</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-num"><span className="count-up" data-target="6">0</span></div>
-              <div className="stat-label">Max roster — ever</div>
-            </div>
-          </div>
+          <Scene />
           <div className="hero-availability"><div className="dot"></div>3 of 6 spots remaining — taking new clients now</div>
         </div>
       </section>
