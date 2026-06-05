@@ -1,0 +1,17 @@
+
+{
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "First VFX project.mp4",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "og-image.png",
+      "use": "@vercel/static"
+    }
+  ]
+}
